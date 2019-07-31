@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Biology body parts</title>
+		<script>
+			//using array, setting the variables to input pictures in the order
+			var fileName = ["STEM/mouth.jpg", "STEM/esophagus.jpg","STEM/liver.jpg", "STEM/stomach.jpg","STEM/pancheas.jpg", "STEM/gall.jpg","STEM/small.jpg", "STEM/large.jpg","STEM/anus.jpg" ];
+			
+		</script>
+	
+	</head>
+	<body>	
+		<!--create the dropdown list
+			create the button called "submit"
+			and after clicking the button, lead it to the function-->
+		<form name="myform" onsubmit="return alertMessage()" > Click to see the picture of the body parts in the Digestive system you want.<br><br>
+		<select name="bd">
+				<option value="0">Mouth</option>
+				<option value="1">Esophagus</option>
+				<option value="2">Liver</option>
+				<option value="3">Stomach</option>
+				<option value="4">Pancheas</option>
+				<option value="5">Gall bladder</option>
+				<option value="6">Small intestine</option>
+				<option value="7">Large intestine </option>
+				<option value="8">Anus</option>
+		</select>		
+			<input type="submit">
+			<input type="button" value="Clear" onclick="clearMessage()">
+		</form>
+		
+		
+		<script>
+		//create fucntion to show pictures after clicking the submit button
+		function alertMessage() {
+		var choice= document.forms["myform"]["bd"].value;
+		var image = "<img src=\"" + fileName[choice] +"\">";
+		document.querySelector("p").innerHTML= image;
+		return false;
+		}
+		
+		function clearMessage() {
+		var emptystring="";
+		document.querySelector("p").innerHTML= emptystring;
+		return false;
+		}
+		
+		</script>
+		
+		<p> </p>
+		
+	</body>
+</html>
